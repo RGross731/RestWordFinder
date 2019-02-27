@@ -36,8 +36,8 @@ public class WordFinderRequest {
 
   @Override
   public String toString() {
-    return "WordFinderRequest [gridSize=" + gridSize + ", gridString=" + gridString + "dictionary="
-            + dictionary + "]";
+    return "WordFinderRequest [gridSize=" + gridSize + ", gridString=" + gridString
+            + ", dictionary=" + dictionary + "]";
   }
 
 }

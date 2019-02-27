@@ -38,6 +38,6 @@ public class WordFinderResponse {
 
   @Override
   public String toString() {
-    return "WordFinderResponse [foundWords=" + foundWords + ", missingWords =" + missingWords + "]";
+    return "WordFinderResponse [foundWords=" + foundWords + ", missingWords=" + missingWords + "]";
   }
 }

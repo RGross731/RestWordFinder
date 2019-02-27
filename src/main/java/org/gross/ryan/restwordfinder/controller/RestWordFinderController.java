@@ -66,7 +66,6 @@ public class RestWordFinderController {
     List<String> dictionary = wordFinderRequest.getDictionary();
     for (String word : dictionary) {
       word = ESAPI.validator().getValidInput("Word", word, "Alpha", Integer.MAX_VALUE, false);
-      word = word.toUpperCase();
     }
 
     return this.wordFinderService.findWords(gridSize, gridString, dictionary);

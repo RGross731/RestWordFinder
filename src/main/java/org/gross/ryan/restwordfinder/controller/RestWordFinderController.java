@@ -55,6 +55,11 @@ public class RestWordFinderController {
     gridString = ESAPI.validator().getValidInput("Grid String", gridString, "AlphaSpace",
             Integer.MAX_VALUE, false);
     gridString = gridString.toUpperCase();
+    if (gridString.length() > gridSize * gridSize) {
+      throw new ValidationException("The length of gridString is larger than gridSize * gridSize",
+              "Invalid gridString length of " + gridString.length()
+                      + " greater than gridSize * gridSize " + gridSize * gridSize);
+    }
 
     String[] dictionary = wordFinderRequest.getDictionary();
     for (String word : dictionary) {

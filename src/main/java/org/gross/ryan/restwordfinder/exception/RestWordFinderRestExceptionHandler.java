@@ -16,6 +16,7 @@ public class RestWordFinderRestExceptionHandler {
   @ExceptionHandler(Exception.class)
   public String handleException(Exception e) {
     log.error(e.getMessage(), e);
-    return "{\"error\":{\"status\":500,\"type\":\"Internal server error\",\"message\":\"Internal server error\"}}";
+    return "{\"error\":{\"status\":" + HttpStatus.INTERNAL_SERVER_ERROR.value() + ",\"type\":\""
+            + e.getClass().getSimpleName() + "\",\"message\":\"" + e.getMessage() + "\"}}";
   }
 }

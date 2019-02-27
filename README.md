@@ -14,7 +14,8 @@ Requirement assumptions and implementation details:
 * Words in the dictionary do not contain spaces
 * Words in the grid can be appear horizontally, vertically, or diagonally, going forward or backwards, up or down
 * Words are only counted as present or not present, so once a word is found the algorithm exits that word early
-* Words of length greater than N are included in the list of not found words, rather than returning an error
+* Words of length greater than gridSize are included in the list of not found words, rather than returning an error
 * The values for gridSize, gridString, or dictionary cannot be null (or contain null values) or a validation error is thrown
 * The value of gridSize must be a positive integer greater than zero
 * Words in the dictionary and gridString only have characters a-zA-Z and space (in the case of the gridString)
+* Words in the dictionary can be repeated

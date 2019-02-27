@@ -1,6 +1,6 @@
 package org.gross.ryan.restwordfinder.domain;
 
-import java.util.Arrays;
+import java.util.List;
 
 import io.swagger.annotations.ApiModel;
 
@@ -8,7 +8,7 @@ import io.swagger.annotations.ApiModel;
 public class WordFinderRequest {
   private int gridSize;
   private String gridString;
-  private String[] dictionary;
+  private List<String> dictionary;
 
   public int getGridSize() {
     return this.gridSize;
@@ -26,18 +26,18 @@ public class WordFinderRequest {
     this.gridString = gridString;
   }
 
-  public String[] getDictionary() {
+  public List<String> getDictionary() {
     return this.dictionary;
   }
 
-  public void setDictionary(String[] dictionary) {
+  public void setDictionary(List<String> dictionary) {
     this.dictionary = dictionary;
   }
 
   @Override
   public String toString() {
     return "WordFinderRequest [gridSize=" + gridSize + ", gridString=" + gridString + "dictionary="
-            + Arrays.toString(dictionary) + "]";
+            + dictionary + "]";
   }
 
 }

@@ -1,30 +1,43 @@
 package org.gross.ryan.restwordfinder.domain;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 public class WordFinderResponse {
-  private String[] foundWords;
-  private String[] missingWords;
+  private List<String> foundWords;
+  private List<String> missingWords;
 
-  public String[] getFoundWords() {
+  public WordFinderResponse() {
+    this.foundWords = new ArrayList<>();
+    this.missingWords = new ArrayList<>();
+  }
+
+  public void addFoundWord(String word) {
+    this.foundWords.add(word);
+  }
+
+  public List<String> getFoundWords() {
     return this.foundWords;
   }
 
-  public void setFoundWords(String[] foundWords) {
+  public void setFoundWords(List<String> foundWords) {
     this.foundWords = foundWords;
   }
 
-  public String[] getMissingWords() {
+  public void addMissingWord(String word) {
+    this.missingWords.add(word);
+  }
+
+  public List<String> getMissingWords() {
     return this.missingWords;
   }
 
-  public void setMissingWords(String[] missingWords) {
+  public void setMissingWords(List<String> missingWords) {
     this.missingWords = missingWords;
   }
 
   @Override
   public String toString() {
-    return "WordFinderResponse [foundWords=" + Arrays.toString(foundWords) + ", missingWords ="
-            + Arrays.toString(missingWords) + "]";
+    return "WordFinderResponse [foundWords=" + foundWords + ", missingWords =" + missingWords + "]";
   }
 }

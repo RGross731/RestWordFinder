@@ -1,5 +1,7 @@
 package org.gross.ryan.restwordfinder.controller;
 
+import java.util.List;
+
 import org.gross.ryan.restwordfinder.domain.WordFinderRequest;
 import org.gross.ryan.restwordfinder.domain.WordFinderResponse;
 import org.gross.ryan.restwordfinder.service.WordFinderService;
@@ -61,7 +63,7 @@ public class RestWordFinderController {
                       + " greater than gridSize * gridSize " + gridSize * gridSize);
     }
 
-    String[] dictionary = wordFinderRequest.getDictionary();
+    List<String> dictionary = wordFinderRequest.getDictionary();
     for (String word : dictionary) {
       word = ESAPI.validator().getValidInput("Word", word, "Alpha", Integer.MAX_VALUE, false);
       word = word.toUpperCase();

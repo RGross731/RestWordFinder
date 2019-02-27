@@ -18,4 +18,4 @@ Requirement assumptions and implementation details:
 * The values for gridSize, gridString, or dictionary cannot be null (or contain null values) or a validation error is thrown
 * The value of gridSize must be a positive integer greater than zero
 * Words in the dictionary and gridString only have characters a-zA-Z and space (in the case of the gridString)
-* Words in the dictionary can be repeated
+* Words in the dictionary can be repeated, but only show up in the found and missing lists in the response once each

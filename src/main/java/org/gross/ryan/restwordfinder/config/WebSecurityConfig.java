@@ -1,7 +1,5 @@
 package org.gross.ryan.restwordfinder.config;
 
-import java.util.Arrays;
-
 import org.gross.ryan.restwordfinder.security.ExceptionForwardingAccessDeniedHandler;
 import org.gross.ryan.restwordfinder.security.ExceptionForwardingAuthenticationEntryPoint;
 import org.gross.ryan.restwordfinder.security.InMemoryUserDetailsService;
@@ -33,8 +31,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     http.csrf().disable();
 
-    http.requiresChannel().anyRequest().requiresSecure()
-            .channelProcessors(Arrays.asList(this.secureChannelProcessor()));
+    // Commenting out the HTTPS requirement to facilitate easier local testing
+    // http.requiresChannel().anyRequest().requiresSecure()
+    // .channelProcessors(Arrays.asList(this.secureChannelProcessor()));
 
     http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 

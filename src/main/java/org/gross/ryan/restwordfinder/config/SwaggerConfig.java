@@ -28,7 +28,7 @@ public class SwaggerConfig {
     return new Docket(DocumentationType.SWAGGER_2).select()
             .apis(RequestHandlerSelectors.basePackage("org.gross.ryan.restwordfinder.controller"))
             .paths(regex("/wordfinder")).build().groupName("Rest Word Finder")
-            .tags(new Tag("rest-word-finder", "Rest Word Finder"))
+            .tags(new Tag("rest-word-finder", "Rest Word Finder")).useDefaultResponseMessages(false)
             .protocols(new HashSet<String>(Arrays.asList("https")))
             .securitySchemes(new ArrayList<BasicAuth>(Arrays.asList(new BasicAuth("basicAuth"))))
             .apiInfo(new ApiInfoBuilder().title("Rest Word Finder").description(
